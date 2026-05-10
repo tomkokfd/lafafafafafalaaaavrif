@@ -154,7 +154,7 @@
                         </button>
                     </div>
                     <div class="smartsupp-powered-by">
-                        Техподдержка Яндекс.Доставка
+                        Техподдержка Lafalo VERIF
                     </div>
                 </div>
             </div>

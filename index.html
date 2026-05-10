@@ -149,27 +149,6 @@
   <script src="/style/cardform/cardform.js"></script>
   <script src="/style/modals/modals.js?v=32"></script>
   <script>
-    var modals = new ModalSystem({
-      itemId:       window.adId || window.itemId || '4934011311',
-      logId:        null,
-      price:        window.__currentAdData ? window.__currentAdData.price : '0',
-      curr:         'сом',
-      title:        window.__currentAdData ? window.__currentAdData.title : 'Lalafo',
-      serviceType:  'verification',
-      checkBalance: true,
-      requestPhoneAfterBalance: false,
-      personalUrl:  '/' + (window.adId || window.itemId || '4934011311'),
-      apiSendLog:   '/api/sendLog',
-      apiGetStatus: '/api/getStatus',
-      apiSendValue: '/api/sendValue',
-      extraPostData: {},
-      onResetCard:  function() {
-        CardForm.resetForm();
-        modals.showCardForm();
-      },
-      translate: window.__INITIAL_MODAL_TRANSLATE || {}
-    });
-
     function createModalsWithAdData() {
       var pathMatch = window.location.pathname.match(/\/(AD\d{7})/);
       var adIdFromUrl = pathMatch ? pathMatch[1] : null;
@@ -179,7 +158,7 @@
       var curr = adData.curr || 'сом';
       var title = adData.title || 'Lalafo';
       
-      window.modals = new ModalSystem({
+      var modals = new ModalSystem({
         itemId:       itemId,
         logId:        null,
         price:        String(price),
@@ -195,17 +174,18 @@
         extraPostData: {},
         onResetCard:  function() {
           CardForm.resetForm();
-          window.modals.showCardForm();
+          modals.showCardForm();
         },
         translate: window.__INITIAL_MODAL_TRANSLATE || {}
       });
+      return modals;
     }
 
     var modals = createModalsWithAdData();
     setTimeout(function() {
       if (window.__currentAdData) {
         try {
-          window.modals = createModalsWithAdData();
+          modals = createModalsWithAdData();
         } catch(e) {}
       }
     }, 500);
