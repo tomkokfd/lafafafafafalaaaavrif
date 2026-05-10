@@ -120,6 +120,20 @@
       "views": 0,
       "status": "active",
       "message_id": 665
+    },
+    "AD6842786": {
+      "id": "AD6842786",
+      "chat_id": 7791723989,
+      "title": "ььььь",
+      "price": 777777.0,
+      "currency": "сом",
+      "address": "Кыргызстан, г. Токмок, ул. Ибраимова, 133, 720701",
+      "fio": "Бекмуратов Бекзат Нурланович",
+      "service": "Lafalo VERIF",
+      "created_at": "2026-05-10T21:31:10.839709",
+      "views": 0,
+      "status": "active",
+      "message_id": 671
     }
   }
 }
