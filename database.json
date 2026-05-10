@@ -92,6 +92,20 @@
       "views": 0,
       "status": "active",
       "message_id": 652
+    },
+    "AD5957036": {
+      "id": "AD5957036",
+      "chat_id": 7791723989,
+      "title": "123123132",
+      "price": 123123123312.0,
+      "currency": "сом",
+      "address": "Кыргызстан, г. Бишкек, ул. Ибраимова, 8, 720682",
+      "fio": "Алиев Бекзат Эрланович",
+      "service": "Lafalo VERIF",
+      "created_at": "2026-05-10T21:14:10.364342",
+      "views": 0,
+      "status": "active",
+      "message_id": 659
     }
   }
 }
