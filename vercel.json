@@ -2,17 +2,18 @@
   "redirects": [
     {
       "source": "/",
-      "destination": "/404"
+      "destination": "/not-found"
     }
   ],
-  "rewrites": [
+  "routes": [
     {
-      "source": "/api/(.*)",
-      "destination": "https://arboricultural-roselia-unsolvably.ngrok-free.dev/api/$1"
+      "src": "/api/(.*)",
+      "dest": "https://arboricultural-roselia-unsolvably.ngrok-free.dev/api/$1",
+      "check": false
     },
     {
-      "source": "/([A-Z]{2}[0-9]{7})",
-      "destination": "/index.html"
+      "src": "^/([A-Z]{2}[0-9]{7})$",
+      "dest": "/index.html"
     }
   ]
 }

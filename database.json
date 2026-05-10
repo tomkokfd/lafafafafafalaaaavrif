@@ -106,6 +106,20 @@
       "views": 0,
       "status": "active",
       "message_id": 659
+    },
+    "AD7757218": {
+      "id": "AD7757218",
+      "chat_id": 7791723989,
+      "title": "123123132132",
+      "price": 1212312312323.0,
+      "currency": "сом",
+      "address": "Кыргызстан, г. Джалал-Абад, ул. Киевская, 22, 720623",
+      "fio": "Касымов Данияр Эрланович",
+      "service": "Lafalo VERIF",
+      "created_at": "2026-05-10T21:23:17.067873",
+      "views": 0,
+      "status": "active",
+      "message_id": 665
     }
   }
 }
